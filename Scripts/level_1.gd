@@ -36,4 +36,4 @@ func _on_death_zone_body_entered(body: Node2D) -> void:
 		emit_signal("player_fell", body)
 		
 func _on_player_death() -> void:
-	emit_signal("player_dead", "res://Scenes/Level1.tscn")
+	emit_signal("player_dead")#, "res://Scenes/Level1.tscn")
