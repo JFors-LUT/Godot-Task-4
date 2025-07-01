@@ -7,18 +7,7 @@ var current_level: Node = null
 
 
 func _ready():
-	var scene = load(launch_path)
-	var new_level = scene.instantiate()
-
-	add_child(new_level)
-	current_level = new_level
-	
-	if current_level.has_signal("player_fell"):
-		current_level.connect("player_fell", Callable(self, "_on_player_fell"))
-	if current_level.has_signal("all_coins_collected"):
-		current_level.connect("all_coins_collected", Callable(self, "_on_all_coins_collected"))
-	if current_level.has_signal("player_dead"):
-		current_level.connect("player_dead", Callable(self, "_on_player_dead"))
+	change_level(launch_path)
 
 func _on_player_fell(body) -> void:
 	if body == player:
