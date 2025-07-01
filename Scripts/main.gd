@@ -1,9 +1,10 @@
 extends Node
 
 @onready var player = $Player
+@onready var launch_path = "res://Scenes/Level1.tscn"
 
 var current_level: Node = null
-var launch_path = "res://Scenes/Level1.tscn"
+
 
 func _ready():
 	var scene = load(launch_path)

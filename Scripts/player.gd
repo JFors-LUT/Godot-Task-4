@@ -38,6 +38,6 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.flip_h = facing_direction_right
 		
 		
-	velocity.x = direction * SPEED
+	velocity.x = direction * SPEED *(60*delta)
 		
 	move_and_slide()
