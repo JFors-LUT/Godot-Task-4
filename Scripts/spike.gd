@@ -1,4 +1,4 @@
-extends Area2D
+class_name Spike extends Area2D
 
 signal player_death
 
