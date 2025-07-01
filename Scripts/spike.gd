@@ -1,6 +1,7 @@
 class_name Spike extends Area2D
 
 signal player_death
+var can_trigger = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,5 +15,6 @@ func _process(_delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
-		print("Auts! Piikki")
 		emit_signal("player_death")
+		
+		
