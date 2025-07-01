@@ -44,7 +44,7 @@ func _change_level_deferred(next_level_path: String) -> void:
 
 
 		
-func _load_new_level(next_level_path: String) -> void:
+func _load_new_level(_next_level_path: String) -> void:
 	#var scene = load(next_level_path)
 	var new_level = LEVEL2_SCENE.instantiate()
 	add_child(new_level)
