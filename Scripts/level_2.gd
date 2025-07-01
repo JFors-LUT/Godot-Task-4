@@ -12,9 +12,10 @@ var collected_coins = 0
 		
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	total_coins = coins_parent.get_child_count()
-	for coin in coins_parent.get_children():
-		coin.connect("collected", Callable(self, "_on_coin_collected"))
+	#total_coins = coins_parent.get_child_count()
+	#for coin in coins_parent.get_children():
+	#	coin.connect("collected", Callable(self, "_on_coin_collected"))
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
