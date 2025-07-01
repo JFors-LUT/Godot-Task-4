@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://c0wrhyujc7gvt"]
+[gd_scene load_steps=7 format=4 uid="uid://c0wrhyujc7gvt"]
 
 [ext_resource type="Script" uid="uid://cd6efhet5mlm" path="res://Scripts/level_2.gd" id="1_1k4by"]
 [ext_resource type="Texture2D" uid="uid://dafoot36615og" path="res://Assets/Textures/Sheets/tilemap.png" id="2_dlanv"]
 [ext_resource type="PackedScene" uid="uid://cbbffuace4kcr" path="res://Scenes/coin.tscn" id="3_onqnr"]
+[ext_resource type="PackedScene" uid="uid://u134aeksuer5" path="res://Scenes/player.tscn" id="4_dlanv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1k4by"]
 texture = ExtResource("2_dlanv")
@@ -42,3 +43,5 @@ position = Vector2(171, 42)
 
 [node name="Coin4" parent="." instance=ExtResource("3_onqnr")]
 position = Vector2(8, 95)
+
+[node name="Player" parent="." instance=ExtResource("4_dlanv")]

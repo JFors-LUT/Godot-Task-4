@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://51ftkg1ddv0h"]
+[gd_scene load_steps=8 format=4 uid="uid://51ftkg1ddv0h"]
 
 [ext_resource type="Script" uid="uid://doieeaxvek5n2" path="res://Scripts/level_1.gd" id="1_4hvuo"]
 [ext_resource type="Texture2D" uid="uid://dafoot36615og" path="res://Assets/Textures/Sheets/tilemap.png" id="2_vly50"]
 [ext_resource type="PackedScene" uid="uid://cbbffuace4kcr" path="res://Scenes/coin.tscn" id="3_c5erv"]
 [ext_resource type="PackedScene" uid="uid://c0qwp8cg1ufag" path="res://Scenes/spike.tscn" id="4_lyd6k"]
+[ext_resource type="PackedScene" uid="uid://u134aeksuer5" path="res://Scenes/player.tscn" id="5_y4dr7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c5erv"]
 texture = ExtResource("2_vly50")
@@ -74,3 +75,5 @@ position = Vector2(182, -67)
 
 [node name="Area2D" parent="Spikes" instance=ExtResource("4_lyd6k")]
 position = Vector2(173, 46)
+
+[node name="Player" parent="." instance=ExtResource("5_y4dr7")]

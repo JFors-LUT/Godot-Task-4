@@ -83,8 +83,6 @@ func _load_new_level(_next_level_path: String) -> void:
 		if current_level.has_signal("player_dead"):
 			current_level.connect("player_dead", Callable(self, "_on_player_dead"))
 
-
-		$Player.global_position = Vector2(0,0)
 		current_level_scene = LEVEL2_SCENE
 	else:
 		var new_level = LEVEL1_SCENE.instantiate()
