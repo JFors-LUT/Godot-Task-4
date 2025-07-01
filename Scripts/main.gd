@@ -39,8 +39,8 @@ func restart_level() -> void:
 	print(current_level)
 	if current_level:	
 		current_level.queue_free()
-		for i in 50:
-			await get_tree().process_frame
+		await get_tree().process_frame
+
 	var new_level = current_level_scene.instantiate()
 	add_child(new_level)
 	current_level = new_level
@@ -52,7 +52,7 @@ func restart_level() -> void:
 	if current_level.has_signal("player_dead"):
 		current_level.connect("player_dead", Callable(self, "_on_player_dead"))
 
-	$Player.global_position = Vector2(0,0)
+	#$Player.global_position = Vector2(0,0)
 	
 
 
