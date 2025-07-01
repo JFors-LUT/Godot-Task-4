@@ -29,12 +29,16 @@ func _on_player_dead(path: String) -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 	
 func _on_all_coins_collected(next_level_path: String) -> void:
+	call_deferred("_change_level_deferred", next_level_path)
+
+func _change_level_deferred(_next_level_path: String) -> void:
 	if current_level and current_level.is_inside_tree():
 		current_level.queue_free()
+		
 	var new_level = LEVEL2_SCENE.instantiate()
 	add_child(new_level)
 	current_level = new_level
