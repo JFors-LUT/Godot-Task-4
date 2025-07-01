@@ -1,12 +1,11 @@
 extends Node
 
 @onready var player = $Player
-@onready var launch_path = "res://Scenes/Level1.tscn"
-
 var current_level: Node = null
 
 
 func _ready():
+	var launch_path = "res://Scenes/Level1.tscn"
 	change_level(launch_path)
 
 func _on_player_fell(body) -> void:
