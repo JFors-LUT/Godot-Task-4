@@ -1,0 +1,88 @@
+[gd_scene load_steps=8 format=4 uid="uid://51ftkg1ddv0h"]
+
+[ext_resource type="Script" uid="uid://doieeaxvek5n2" path="res://Scripts/level_1.gd" id="1_4hvuo"]
+[ext_resource type="Texture2D" uid="uid://dafoot36615og" path="res://Assets/Textures/Sheets/tilemap.png" id="2_vly50"]
+[ext_resource type="PackedScene" uid="uid://cbbffuace4kcr" path="res://Scenes/coin.tscn" id="3_c5erv"]
+[ext_resource type="PackedScene" uid="uid://c0qwp8cg1ufag" path="res://Scenes/spike.tscn" id="4_lyd6k"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c5erv"]
+texture = ExtResource("2_vly50")
+separation = Vector2i(1, 1)
+texture_region_size = Vector2i(18, 18)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7.19435, -6.83463, 7.19435, -7.01449, 7.19435, 7.01449, -6.83463, 7.01449)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -6.65477, 9, -6.65477, 9, 6.65477, -9, 6.65477)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -7.01449, 7.01449, -6.83463, 6.65477, 6.65477, -9, 6.65477)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -7.19435, 7.01449, -7.37421, 6.83463, 9, -9, 9)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -7.19435, 9, -7.19435, 9, 9, -9, 9)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7.01449, -6.65477, 9, -6.83463, 9, 9, -7.01449, 9)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7.01449, -6.83463, 6.83463, -7.01449, 7.01449, 9, -6.83463, 9)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)
+5:6/0 = 0
+5:6/0/z_index = -1
+4:6/0 = 0
+4:6/0/z_index = -1
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7.01449, -7.19435, 9, -7.01449, 9, 6.65477, -6.65477, 6.65477)
+
+[sub_resource type="TileSet" id="TileSet_lyd6k"]
+tile_size = Vector2i(18, 18)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_c5erv")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vly50"]
+size = Vector2(974, 8)
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_4hvuo")
+
+[node name="TileMap" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD//wAAAAACAAAAAAAAAAAAAAACAAAAAAABAAAAAAADAAAAAAD+/wAAAAABAAAAAAADAAIAAAACAAAAAAAEAAIAAAACAAAAAAADAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAJAAQAAAAFAAEAAAAJAAMAAAABAAEAAAAIAAQAAAABAAEAAAAKAAQAAAAEAAEAAAAKAAMAAAADAAEAAAALAAQAAAADAAEAAAAFAAIAAAADAAAAAAACAAIAAAABAAAAAAADAP//AAAFAAYAAAADAAEAAAAEAAYAAAD+////AAAEAAYAAAAHAP//AAAEAAYAAAA=")
+tile_set = SubResource("TileSet_lyd6k")
+
+[node name="DeathZone" type="Area2D" parent="."]
+position = Vector2(33, 113)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
+position = Vector2(30, 13)
+shape = SubResource("RectangleShape2D_vly50")
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource("3_c5erv")]
+position = Vector2(62, -11)
+
+[node name="Coin2" parent="Coins" instance=ExtResource("3_c5erv")]
+position = Vector2(95, 28)
+
+[node name="Coin3" parent="Coins" instance=ExtResource("3_c5erv")]
+position = Vector2(46, 28)
+
+[node name="Coin4" parent="Coins" instance=ExtResource("3_c5erv")]
+position = Vector2(208, 60)
+
+[node name="Coin5" parent="Coins" instance=ExtResource("3_c5erv")]
+position = Vector2(153, 61)
+
+[node name="Coin6" parent="Coins" instance=ExtResource("3_c5erv")]
+position = Vector2(182, -67)
+
+[node name="Spikes" type="Node2D" parent="."]
+
+[node name="Area2D" parent="Spikes" instance=ExtResource("4_lyd6k")]
+position = Vector2(173, 46)
+
+[connection signal="body_entered" from="DeathZone" to="." method="_on_death_zone_body_entered"]
