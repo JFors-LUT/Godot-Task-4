@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://c0wrhyujc7gvt"]
+[gd_scene load_steps=6 format=4 uid="uid://c0wrhyujc7gvt"]
 
 [ext_resource type="Script" uid="uid://cd6efhet5mlm" path="res://Scripts/level_2.gd" id="1_1k4by"]
 [ext_resource type="Texture2D" uid="uid://dafoot36615og" path="res://Assets/Textures/Sheets/tilemap.png" id="2_dlanv"]
@@ -32,9 +32,6 @@ tile_size = Vector2i(18, 18)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_c5erv")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vly50"]
-size = Vector2(1453, 14)
-
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_1k4by")
 
@@ -42,13 +39,6 @@ script = ExtResource("1_1k4by")
 position = Vector2(-1, 1)
 tile_map_data = PackedByteArray("AAAAAAYAAAAAAAMAAAAJAAMAAAACAAIAAAAUAAYAAAACAAMAAAAVAAYAAAACAAMAAAAWAAYAAAACAAMAAAAXAAYAAAACAAMAAAAYAAYAAAACAAMAAAD7/wYAAAACAAMAAAD6/wYAAAACAAMAAAD5/wYAAAACAAMAAAD4/wYAAAACAAMAAAD3/wYAAAACAAMAAAD2/wYAAAACAAMAAAD1/wYAAAACAAMAAAD0/wYAAAACAAMAAADz/wYAAAACAAMAAADy/wYAAAACAAMAAADx/wYAAAACAAMAAAD8/wYAAAADAAMAAADw/wYAAAABAAMAAAAZAAYAAAADAAMAAAAdAP//AAACAAIAAAAWAP7/AAAAAAIAAAAPAP//AAAAAAIAAAA=")
 tile_set = SubResource("TileSet_lyd6k")
-
-[node name="DeathZone" type="Area2D" parent="."]
-position = Vector2(34, 117)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
-position = Vector2(130.5, 16)
-shape = SubResource("RectangleShape2D_vly50")
 
 [node name="Coins" type="Node2D" parent="."]
 
@@ -69,5 +59,3 @@ position = Vector2(530, -30)
 
 [node name="Coin6" parent="Coins" instance=ExtResource("3_onqnr")]
 position = Vector2(403, -122)
-
-[connection signal="body_entered" from="DeathZone" to="." method="_on_death_zone_body_entered"]

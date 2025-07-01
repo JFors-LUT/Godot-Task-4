@@ -23,7 +23,7 @@ func _process(_delta: float) -> void:
 		
 func _on_coin_collected() -> void:
 	collected_coins += 1
-	if collected_coins == total_coins:
+	if collected_coins == total_coins: #total_coins
 		emit_signal("all_coins_collected", "res://Scenes/Level1.tscn")
 
 func _on_death_zone_body_entered(body: Node2D) -> void:
