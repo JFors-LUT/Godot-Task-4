@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=4 uid="uid://c0wrhyujc7gvt"]
+[gd_scene load_steps=5 format=4 uid="uid://c0wrhyujc7gvt"]
 
 [ext_resource type="Script" uid="uid://cd6efhet5mlm" path="res://Scripts/level_2.gd" id="1_1k4by"]
 [ext_resource type="Texture2D" uid="uid://dafoot36615og" path="res://Assets/Textures/Sheets/tilemap.png" id="2_dlanv"]
-[ext_resource type="PackedScene" uid="uid://cbbffuace4kcr" path="res://Scenes/coin.tscn" id="3_onqnr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c5erv"]
 texture = ExtResource("2_dlanv")
@@ -39,23 +38,3 @@ script = ExtResource("1_1k4by")
 position = Vector2(-1, 1)
 tile_map_data = PackedByteArray("AAAAAAYAAAAAAAMAAAAJAAMAAAACAAIAAAAUAAYAAAACAAMAAAAVAAYAAAACAAMAAAAWAAYAAAACAAMAAAAXAAYAAAACAAMAAAAYAAYAAAACAAMAAAD7/wYAAAACAAMAAAD6/wYAAAACAAMAAAD5/wYAAAACAAMAAAD4/wYAAAACAAMAAAD3/wYAAAACAAMAAAD2/wYAAAACAAMAAAD1/wYAAAACAAMAAAD0/wYAAAACAAMAAADz/wYAAAACAAMAAADy/wYAAAACAAMAAADx/wYAAAACAAMAAAD8/wYAAAADAAMAAADw/wYAAAABAAMAAAAZAAYAAAADAAMAAAAdAP//AAACAAIAAAAWAP7/AAAAAAIAAAAPAP//AAAAAAIAAAA=")
 tile_set = SubResource("TileSet_lyd6k")
-
-[node name="Coins" type="Node2D" parent="."]
-
-[node name="Coin" parent="Coins" instance=ExtResource("3_onqnr")]
-position = Vector2(8, 98)
-
-[node name="Coin2" parent="Coins" instance=ExtResource("3_onqnr")]
-position = Vector2(169, 45)
-
-[node name="Coin3" parent="Coins" instance=ExtResource("3_onqnr")]
-position = Vector2(528, 19)
-
-[node name="Coin4" parent="Coins" instance=ExtResource("3_onqnr")]
-position = Vector2(-355, 36)
-
-[node name="Coin5" parent="Coins" instance=ExtResource("3_onqnr")]
-position = Vector2(530, -30)
-
-[node name="Coin6" parent="Coins" instance=ExtResource("3_onqnr")]
-position = Vector2(403, -122)

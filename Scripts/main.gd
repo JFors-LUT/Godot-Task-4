@@ -39,8 +39,11 @@ func _change_level_deferred(next_level_path: String) -> void:
 	if current_level and current_level.is_inside_tree():
 		current_level.queue_free()
 		await get_tree().process_frame 
-		call_deferred("_load_new_level", next_level_path)
+	
+	call_deferred("_load_new_level", next_level_path)
 
+
+		
 func _load_new_level(next_level_path: String) -> void:
 	#var scene = load(next_level_path)
 	var new_level = LEVEL2_SCENE.instantiate()
